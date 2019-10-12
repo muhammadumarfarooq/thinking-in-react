@@ -1,15 +1,21 @@
 import React, { useState, useContext } from "react";
 
-const Search = () => {
+const Search = ({
+  checkBox,
+  text,
+  setText,
+  onFormSubmit,
+  onCheckBoxChange
+}) => {
   return (
     <div>
-      <form className='form'>
+      <form className='form' onSubmit={onFormSubmit}>
         <input
           type='text'
           name='text'
           placeholder='Search Users...'
-          // value={text}
-          // onChange={onInputChange}
+          value={text}
+          onChange={setText}
         />
         <input
           type='submit'
@@ -19,7 +25,7 @@ const Search = () => {
       </form>
 
       <div className='card'>
-        <input type='checkbox' />
+        <input type='checkbox' onChange={onCheckBoxChange} />
         <span className='text-success'>Only show products in stock</span>
       </div>
     </div>

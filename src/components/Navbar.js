@@ -5,7 +5,7 @@ const Navbar = () => {
     <div className='navbar bg-success'>
       <h2>
         {" "}
-        <i class='fab fa-think-peaks'></i> Thinking in React.js
+        <i className='fab fa-think-peaks'></i> Thinking in React.js
       </h2>
       <ul>
         <li>

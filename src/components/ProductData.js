@@ -1,19 +1,24 @@
 import React from "react";
 
-const ProductData = ({ product }) => {
-  let productName;
+const ProductData = ({ product, checkBox }) => {
+  let productDetail;
   if (!product.stocked) {
-    productName = <td style={{ color: "red" }}>{product.name}</td>;
+    productDetail = checkBox || (
+      <tr style={{ color: "red" }}>
+        <td>{product.name}</td>
+        <td>{product.price}</td>
+      </tr>
+    );
   } else {
-    productName = <td>{product.name}</td>;
+    productDetail = (
+      <tr>
+        <td>{product.name}</td>
+        <td>{product.price}</td>
+      </tr>
+    );
   }
 
-  return (
-    <tr>
-      {productName}
-      <td>{product.price}</td>
-    </tr>
-  );
+  return productDetail;
 };
 
 export default ProductData;
