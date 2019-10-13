@@ -1,32 +1,26 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
+import ProductContext from "../context/products/productContext";
 
-const Search = ({
-  checkBox,
-  text,
-  setText,
-  onFormSubmit,
-  onCheckBoxChange
-}) => {
+const Search = () => {
+  const productContext = useContext(ProductContext);
+  const { onCheckBoxChange, onInputChange, checkBox } = productContext;
   return (
     <div>
-      <form className='form' onSubmit={onFormSubmit}>
+      <form className='form'>
         <input
           type='text'
           name='text'
-          placeholder='Search Users...'
-          value={text}
-          onChange={setText}
-        />
-        <input
-          type='submit'
-          value='Submit'
-          className='btn btn-success btn-block'
+          placeholder='Search Products...'
+          onChange={onInputChange}
         />
       </form>
 
       <div className='card'>
-        <input type='checkbox' onChange={onCheckBoxChange} />
-        <span className='text-success'>Only show products in stock</span>
+        <div>
+          <input type='checkbox' onChange={onCheckBoxChange} />
+          <span className='text-success'>Only show products in stock</span>
+        </div>
+        {checkBox && <div className='badge bg-success'>In stock</div>}
       </div>
     </div>
   );

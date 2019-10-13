@@ -241,9 +241,22 @@ img {
   padding: 0.7rem;
   margin: 1rem 0;
   opacity: 0.9;
+
+  /* Umar add this */
+  display: flex;
+  align-items: center;
+  /* Umar add this */
+
   background: var(--light-color);
   color: #333;
 }
+
+/* Umar add this */
+
+.alert span {
+  margin-left: 0.5rem;
+}
+/* Umar add this */
 
 .btn-primary,
 .bg-primary,
@@ -339,7 +352,7 @@ button {
 table th,
 table td {
   padding: 1rem;
-  text-align: left;
+  text-align: center;
 }
 
 table th {

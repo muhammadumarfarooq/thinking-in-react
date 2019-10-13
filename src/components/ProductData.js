@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import ProductContext from "../context/products/productContext";
 
-const ProductData = ({ product, checkBox }) => {
+const ProductData = ({ product }) => {
+  const productContext = useContext(ProductContext);
+  const { checkBox } = productContext;
   let productDetail;
   if (!product.stocked) {
     productDetail = checkBox || (

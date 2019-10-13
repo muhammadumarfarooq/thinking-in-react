@@ -1,0 +1,3 @@
+export const CHANGE_CHECKBOX = "CHANGE_CHECKBOX";
+export const FILTER_ARRAY = "FILTER_ARRAY";
+export const SHOW_ALERT = "SHOW_ALERT";
